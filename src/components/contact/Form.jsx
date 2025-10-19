@@ -32,15 +32,31 @@ export default function Form() {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   const sendEmail = (params) => {
+    // Check if EmailJS credentials are configured
+    const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey || 
+        serviceId === 'your_service_id_here' || 
+        templateId === 'your_template_id_here' || 
+        publicKey === 'your_public_key_here') {
+      toast.error("EmailJS is not configured. Please set up your credentials in .env.local file.", {
+        duration: 5000,
+      });
+      console.error("EmailJS Configuration Missing. Please add your credentials to .env.local");
+      return;
+    }
+
     const toastId = toast.loading("Sending your message...");
 
     emailjs
       .send(
-        process.env.NEXT_PUBLIC_SERVICE_ID,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID,
+        serviceId,
+        templateId,
         params,
         {
-          publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY,
+          publicKey: publicKey,
           limitRate: { throttle: 5000 },
         }
       )
