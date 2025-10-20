@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import { Toaster, toast } from "sonner";
@@ -31,11 +31,26 @@ export default function Form() {
 
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
+  // Initialize EmailJS with public key
+  useEffect(() => {
+    const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
+    if (publicKey && publicKey !== 'your_public_key_here') {
+      emailjs.init(publicKey);
+      console.log("EmailJS initialized with public key");
+    }
+  }, []);
+
   const sendEmail = (params) => {
     // Check if EmailJS credentials are configured
     const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
     const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
     const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
+
+    console.log("EmailJS Config Check:");
+    console.log("Service ID:", serviceId);
+    console.log("Template ID:", templateId);
+    console.log("Public Key:", publicKey ? "✓ Present" : "✗ Missing");
+    console.log("Template Params:", params);
 
     if (!serviceId || !templateId || !publicKey || 
         serviceId === 'your_service_id_here' || 
@@ -54,20 +69,28 @@ export default function Form() {
       .send(
         serviceId,
         templateId,
-        params,
-        {
-          publicKey: publicKey,
-          limitRate: { throttle: 5000 },
-        }
+        params
       )
-      .then(() => {
+      .then((response) => {
+        console.log("SUCCESS!", response.status, response.text);
         toast.success("Message sent successfully!", { id: toastId });
         setIsPopupVisible(true);
         reset(); // clear form
       })
       .catch((error) => {
-        console.error("FAILED...", error.text);
-        toast.error("There was an error sending your message!", { id: toastId });
+        console.error("EmailJS Error:", error);
+        console.error("Error text:", error.text);
+        console.error("Error status:", error.status);
+        
+        let errorMessage = "There was an error sending your message!";
+        if (error.text) {
+          errorMessage += ` (${error.text})`;
+        }
+        
+        toast.error(errorMessage, { 
+          id: toastId,
+          duration: 5000,
+        });
       });
   };
 
