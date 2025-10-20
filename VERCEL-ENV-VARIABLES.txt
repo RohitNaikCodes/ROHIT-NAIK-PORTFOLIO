@@ -1,0 +1,39 @@
+# VERCEL ENVIRONMENT VARIABLES
+# Copy and paste these into Vercel Dashboard → Settings → Environment Variables
+
+===============================================
+VARIABLE 1:
+===============================================
+Name: NEXT_PUBLIC_SERVICE_ID
+Value: service_i3rq15l
+
+===============================================
+VARIABLE 2:
+===============================================
+Name: NEXT_PUBLIC_TEMPLATE_ID
+Value: template_pdjchqz
+
+===============================================
+VARIABLE 3:
+===============================================
+Name: NEXT_PUBLIC_PUBLIC_KEY
+Value: MbUK6gUZe-NtgHmBX
+
+===============================================
+
+INSTRUCTIONS:
+1. Go to Vercel Dashboard
+2. Select your deployed project
+3. Click "Settings" tab
+4. Click "Environment Variables" from left menu
+5. For each variable above:
+   - Click "Add New"
+   - Copy the Name (e.g., NEXT_PUBLIC_SERVICE_ID)
+   - Paste it in the "Key" field
+   - Copy the Value (e.g., service_i3rq15l)
+   - Paste it in the "Value" field
+   - Select all environments (Production, Preview, Development)
+   - Click "Save"
+6. After adding all 3, go to Deployments tab and Redeploy
+
+===============================================
