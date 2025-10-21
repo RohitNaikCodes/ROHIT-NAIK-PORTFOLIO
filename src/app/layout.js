@@ -3,6 +3,7 @@ import "./globals.css";
 import clsx from "clsx";
 import FireFliesBackground from "@/components/FireFliesBackground";
 import Sound from "@/components/Sound";
+import Header from "@/components/Header";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -11,13 +12,11 @@ const inter = Inter({
 
 export const metadata = {
   title: {
-    template:
-      "Next.js Portfolio Created with Three.js and Tailwind CSS | %s | Mahee",
-    default:
-      "Next.js Portfolio Created with Three.js and Tailwind CSS by Mahee",
+    template: "%s | Rohit Naik - Full Stack Developer",
+    default: "Rohit Naik - Full Stack Developer Portfolio",
   },
   description:
-    "A unique creative portfolio designed by Mahee with cutting-edge technologies like Next.js, Tailwind CSS, Three.js, and Framer Motion. Experience the art of modern web development firsthand.",
+    "Full Stack Developer specializing in MERN stack, Next.js, and DevOps. Explore my portfolio showcasing web development projects with React, Node.js, MongoDB, and modern web technologies.",
 };
 
 export default function RootLayout({ children }) {
@@ -29,6 +28,7 @@ export default function RootLayout({ children }) {
           "bg-background text-foreground font-inter"
         )}
       >
+        <Header />
         {children}
         <FireFliesBackground />
         <Sound />
