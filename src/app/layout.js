@@ -3,7 +3,6 @@ import "./globals.css";
 import clsx from "clsx";
 import FireFliesBackground from "@/components/FireFliesBackground";
 import Sound from "@/components/Sound";
-import Header from "@/components/Header";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,7 +27,6 @@ export default function RootLayout({ children }) {
           "bg-background text-foreground font-inter"
         )}
       >
-        <Header />
         {children}
         <FireFliesBackground />
         <Sound />
