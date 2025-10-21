@@ -40,25 +40,27 @@ const AboutDetails = () => {
         
 
         <ItemLayout className={"col-span-full"}>
-          <div className="w-full h-auto relative" style={{height: '120px'}}>
+          <div className="w-full relative" style={{minHeight: '120px', width: '100%'}}>
             <Image
               src={`https://skillicons.dev/icons?i=appwrite,aws,babel,bootstrap,cloudflare,css,d3,docker,figma,firebase,gatsby,git,github,graphql,html,ipfs,js,jquery,kubernetes,linux,mongodb,mysql,netlify,nextjs,nodejs,npm,postgres,react,redux,replit,sass,supabase,tailwind,threejs,vercel,vite,vscode,yarn`}
               alt="skills"
-              fill
-              sizes="100vw"
-              className="object-contain"
+              width={1200}
+              height={120}
+              className="w-full h-auto"
+              unoptimized
             />
           </div>
         </ItemLayout>
 
         <ItemLayout className={"col-span-full md:col-span-6 !p-0"}>
-          <div className="w-full h-auto relative" style={{height: '160px'}}>
+          <div className="w-full relative" style={{minHeight: '195px'}}>
             <Image
               src={`https://github-readme-stats.vercel.app/api/top-langs?username=RohitNaikCodes&show_icons=true&locale=en&layout=compact`}
               alt="languages"
-              fill
-              sizes="100vw"
-              className="object-contain"
+              width={495}
+              height={195}
+              className="w-full h-auto"
+              unoptimized
             />
           </div>
         </ItemLayout>
@@ -69,13 +71,14 @@ const AboutDetails = () => {
             target="_blank"
             className="w-full"
           >
-            <div className="w-full h-auto relative" style={{height: '160px'}}>
+            <div className="w-full relative" style={{minHeight: '195px'}}>
               <Image
                 src={`https://github-readme-stats.vercel.app/api?username=RohitNaikCodes&show_icons=true&locale=en`}
                 alt="github-stats"
-                fill
-                sizes="100vw"
-                className="object-contain"
+                width={495}
+                height={195}
+                className="w-full h-auto"
+                unoptimized
               />
             </div>
           </Link>
