@@ -9,7 +9,7 @@ A modern, interactive portfolio built with Next.js featuring 3D models, animatio
 npm install
 npm run dev
 ```
-Visit `http://localhost:3000`
+
 
 ### Build for Production
 ```bash
