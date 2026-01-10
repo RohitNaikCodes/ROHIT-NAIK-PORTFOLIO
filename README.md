@@ -17,7 +17,7 @@ npm run build
 npm start
 ```
 
-## 📦 Deploy to Vercel
+## 📦 Deploy to Vercel..
 
 1. Import this repository on [Vercel](https://vercel.com/)
 2. Add environment variables in Vercel Dashboard → Settings → Environment Variables:
