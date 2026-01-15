@@ -1,26 +1,6 @@
-# Rohit Naik - Linktree Style Portfolio
+# Portfolio Website
 
-A clean, modern, and responsive portfolio website inspired by Linktree design patterns. Features dark/light theme support, smooth animations, and pixel-perfect implementation.
-
-## 🌟 Features
-
-- **Dark/Light Theme Toggle** - Smooth theme switching with localStorage persistence
-- **Responsive Design** - Looks great on desktop, tablet, and mobile
-- **Dynamic Greeting** - Changes based on time of day (Morning/Afternoon/Evening/Night)
-- **Micro-interactions** - Subtle hover effects, transitions, and animations
-- **Accessibility** - Keyboard navigation, ARIA labels, reduced motion support
-- **Performance Optimized** - Minimal dependencies, clean code
-
-## 📁 File Structure
-
-```
-portfolio-linktree/
-├── index.html          # Main HTML structure
-├── styles.css          # CSS with theme variables
-├── script.js           # JavaScript for interactivity
-├── profile.jpg         # Your profile photo (replace this)
-└── README.md           # This file
-```
+A modern, interactive portfolio built with Next.js featuring 3D models, animations, and a contact form.
 
 ## 🚀 Quick Start
 
