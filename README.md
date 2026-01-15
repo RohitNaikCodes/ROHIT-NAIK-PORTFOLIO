@@ -1,6 +1,14 @@
-# Portfolio Website
+# Rohit Naik - Portfolio
 
-A modern, interactive portfolio built with Next.js featuring 3D models, animations, and a contact form.
+A clean, modern, and responsive linktree-style portfolio website with dark/light theme support.
+
+## ✨ Features
+
+- **Dark/Light Theme** - Toggle with localStorage persistence
+- **Responsive Design** - Works on desktop, tablet, and mobile
+- **Dynamic Greeting** - Changes based on time of day
+- **Smooth Animations** - Hover effects and transitions
+- **No Dependencies** - Pure HTML, CSS, JavaScript
 
 ## 🚀 Quick Start
 
