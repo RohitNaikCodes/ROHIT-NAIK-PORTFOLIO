@@ -236,7 +236,12 @@ body {
     color: var(--text-primary);
     margin-bottom: 8px;
     letter-spacing: -0.02em;
-    transition: color var(--transition-normal);
+    transition: color var(--transition-normal), text-shadow var(--transition-normal);
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.3), 0 0 20px rgba(59, 130, 246, 0.15);
+}
+
+[data-theme="dark"] .profile-name {
+    text-shadow: 0 0 10px rgba(96, 165, 250, 0.4), 0 0 25px rgba(96, 165, 250, 0.2);
 }
 
 /* Profile Tagline */
