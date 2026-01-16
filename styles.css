@@ -206,11 +206,40 @@ body {
     background: linear-gradient(135deg, var(--profile-ring), var(--profile-ring-light));
     z-index: -1;
     transition: all var(--transition-normal);
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 10px var(--profile-ring),
+                    0 0 20px var(--profile-ring),
+                    0 0 30px var(--profile-ring);
+        filter: brightness(1);
+    }
+    50% {
+        box-shadow: 0 0 20px var(--profile-ring),
+                    0 0 40px var(--profile-ring),
+                    0 0 60px var(--profile-ring);
+        filter: brightness(1.2);
+    }
 }
 
 .profile-image-wrapper:hover::before {
     inset: -6px;
-    filter: blur(2px);
+    animation: glow-intense 1s ease-in-out infinite;
+}
+
+@keyframes glow-intense {
+    0%, 100% {
+        box-shadow: 0 0 15px var(--profile-ring),
+                    0 0 30px var(--profile-ring),
+                    0 0 45px var(--profile-ring);
+    }
+    50% {
+        box-shadow: 0 0 30px var(--profile-ring),
+                    0 0 60px var(--profile-ring),
+                    0 0 90px var(--profile-ring);
+    }
 }
 
 .profile-image {
