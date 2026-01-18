@@ -1,6 +1,7 @@
 /* ==========================================================================
    ROHIT NAIK PORTFOLIO - LINKTREE STYLE
    Clean, Modern, Responsive Portfolio
+   Daily Changing Themes (7 Days)
    ========================================================================== */
 
 /* ==========================================================================
@@ -8,7 +9,7 @@
    ========================================================================== */
 
 :root {
-    /* ===== Light Theme (Default) - LinkedIn Premium Style ===== */
+    /* ===== Default/Base Variables ===== */
     --bg-primary: #f5f0f7;
     --bg-secondary: #ebe4ef;
     --bg-gradient-start: #d4c4db;
@@ -17,42 +18,54 @@
     --text-primary: #1a1a1a;
     --text-secondary: #4a4a4a;
     --text-muted: #6b6b6b;
-    
-    /* Accent Colors - Golden/Orange like LinkedIn */
     --accent-primary: #e7a33e;
     --accent-hover: #d4922e;
-    
-    /* Button Colors - Golden style */
     --btn-primary-bg: #e7a33e;
     --btn-primary-text: #1a1a1a;
     --btn-primary-hover: #d4922e;
     --btn-youtube-bg: #1a1a1a;
     --btn-youtube-text: #ffffff;
     --btn-youtube-hover: #333333;
-    
-    /* Border & Shadow */
     --border-color: #c9b8d1;
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.12);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
-    
-    /* Profile Ring - Golden */
     --profile-ring: #e7a33e;
     --profile-ring-light: #f0c078;
-    
-    /* Social Icons */
     --social-icon-bg: transparent;
     --social-icon-color: #4a4a4a;
     --social-icon-hover: #1a1a1a;
-    
-    /* Transitions */
     --transition-fast: 0.15s ease;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.5s ease;
 }
 
-/* ===== Dark Theme - LinkedIn Premium Style ===== */
-[data-theme="dark"] {
+/* ==========================================================================
+   SUNDAY - LinkedIn Premium (Purple & Gold)
+   ========================================================================== */
+[data-day="sunday"] {
+    --bg-primary: #f5f0f7;
+    --bg-secondary: #ebe4ef;
+    --bg-gradient-start: #d4c4db;
+    --bg-gradient-mid: #c9b8d1;
+    --bg-gradient-end: #f5f0f7;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --text-muted: #6b6b6b;
+    --accent-primary: #e7a33e;
+    --btn-primary-bg: #e7a33e;
+    --btn-primary-text: #1a1a1a;
+    --btn-primary-hover: #d4922e;
+    --btn-youtube-bg: #1a1a1a;
+    --btn-youtube-text: #ffffff;
+    --border-color: #c9b8d1;
+    --profile-ring: #e7a33e;
+    --profile-ring-light: #f0c078;
+    --social-icon-color: #4a4a4a;
+    --social-icon-hover: #1a1a1a;
+}
+
+[data-day="sunday"][data-theme="dark"] {
     --bg-primary: #2d2d2d;
     --bg-secondary: #3a3a3a;
     --bg-gradient-start: #5c3d6e;
@@ -61,25 +74,301 @@
     --text-primary: #ffffff;
     --text-secondary: #c5c5c5;
     --text-muted: #9a9a9a;
-    
-    /* Button Colors - Dark Mode (Golden) */
     --btn-primary-bg: #e7a33e;
     --btn-primary-text: #1a1a1a;
     --btn-primary-hover: #f0b050;
-    
-    /* Border & Shadow - Dark Mode */
+    --btn-youtube-bg: #ffffff;
+    --btn-youtube-text: #1a1a1a;
     --border-color: #4a3358;
+    --profile-ring: #e7a33e;
+    --profile-ring-light: #f0c078;
+    --social-icon-color: #d1d5db;
+    --social-icon-hover: #ffffff;
+}
+
+/* ==========================================================================
+   MONDAY - The Tech Minimalist (Slate & Indigo)
+   ========================================================================== */
+[data-day="monday"] {
+    --bg-primary: #F8FAFC;
+    --bg-secondary: #E2E8F0;
+    --bg-gradient-start: #E2E8F0;
+    --bg-gradient-mid: #CBD5E1;
+    --bg-gradient-end: #F8FAFC;
+    --text-primary: #1E293B;
+    --text-secondary: #475569;
+    --text-muted: #64748B;
+    --accent-primary: #4F46E5;
+    --btn-primary-bg: #4F46E5;
+    --btn-primary-text: #ffffff;
+    --btn-primary-hover: #4338CA;
+    --btn-youtube-bg: #1E293B;
+    --btn-youtube-text: #ffffff;
+    --border-color: #CBD5E1;
+    --profile-ring: #4F46E5;
+    --profile-ring-light: #818CF8;
+    --social-icon-color: #475569;
+    --social-icon-hover: #1E293B;
+}
+
+[data-day="monday"][data-theme="dark"] {
+    --bg-primary: #1E293B;
+    --bg-secondary: #334155;
+    --bg-gradient-start: #1E293B;
+    --bg-gradient-mid: #0F172A;
+    --bg-gradient-end: #020617;
+    --text-primary: #F1F5F9;
+    --text-secondary: #CBD5E1;
+    --text-muted: #94A3B8;
+    --btn-primary-bg: #818CF8;
+    --btn-primary-text: #0F172A;
+    --btn-primary-hover: #A5B4FC;
+    --btn-youtube-bg: #F1F5F9;
+    --btn-youtube-text: #0F172A;
+    --border-color: #334155;
+    --profile-ring: #818CF8;
+    --profile-ring-light: #A5B4FC;
+    --social-icon-color: #CBD5E1;
+    --social-icon-hover: #ffffff;
+}
+
+/* ==========================================================================
+   TUESDAY - The Premium Mono (Black & Gold)
+   ========================================================================== */
+[data-day="tuesday"] {
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F5F5F5;
+    --bg-gradient-start: #F5F5F5;
+    --bg-gradient-mid: #E5E5E5;
+    --bg-gradient-end: #FFFFFF;
+    --text-primary: #171717;
+    --text-secondary: #404040;
+    --text-muted: #737373;
+    --accent-primary: #D4AF37;
+    --btn-primary-bg: #D4AF37;
+    --btn-primary-text: #171717;
+    --btn-primary-hover: #B8972F;
+    --btn-youtube-bg: #171717;
+    --btn-youtube-text: #ffffff;
+    --border-color: #D4D4D4;
+    --profile-ring: #D4AF37;
+    --profile-ring-light: #E5C55A;
+    --social-icon-color: #404040;
+    --social-icon-hover: #171717;
+}
+
+[data-day="tuesday"][data-theme="dark"] {
+    --bg-primary: #171717;
+    --bg-secondary: #262626;
+    --bg-gradient-start: #171717;
+    --bg-gradient-mid: #0A0A0A;
+    --bg-gradient-end: #000000;
+    --text-primary: #E5E5E5;
+    --text-secondary: #A3A3A3;
+    --text-muted: #737373;
+    --btn-primary-bg: #FCC200;
+    --btn-primary-text: #0A0A0A;
+    --btn-primary-hover: #FFD633;
+    --btn-youtube-bg: #E5E5E5;
+    --btn-youtube-text: #0A0A0A;
+    --border-color: #404040;
+    --profile-ring: #FCC200;
+    --profile-ring-light: #FFD633;
+    --social-icon-color: #A3A3A3;
+    --social-icon-hover: #ffffff;
+}
+
+/* ==========================================================================
+   WEDNESDAY - The Modern Nature (Emerald & Sage)
+   ========================================================================== */
+[data-day="wednesday"] {
+    --bg-primary: #F0FDF4;
+    --bg-secondary: #DCFCE7;
+    --bg-gradient-start: #DCFCE7;
+    --bg-gradient-mid: #BBF7D0;
+    --bg-gradient-end: #F0FDF4;
+    --text-primary: #14532D;
+    --text-secondary: #166534;
+    --text-muted: #22863A;
+    --accent-primary: #16A34A;
+    --btn-primary-bg: #16A34A;
+    --btn-primary-text: #ffffff;
+    --btn-primary-hover: #15803D;
+    --btn-youtube-bg: #14532D;
+    --btn-youtube-text: #ffffff;
+    --border-color: #BBF7D0;
+    --profile-ring: #16A34A;
+    --profile-ring-light: #4ADE80;
+    --social-icon-color: #166534;
+    --social-icon-hover: #14532D;
+}
+
+[data-day="wednesday"][data-theme="dark"] {
+    --bg-primary: #14532D;
+    --bg-secondary: #166534;
+    --bg-gradient-start: #14532D;
+    --bg-gradient-mid: #064E3B;
+    --bg-gradient-end: #022C22;
+    --text-primary: #ECFDF5;
+    --text-secondary: #A7F3D0;
+    --text-muted: #6EE7B7;
+    --btn-primary-bg: #4ADE80;
+    --btn-primary-text: #022C22;
+    --btn-primary-hover: #86EFAC;
+    --btn-youtube-bg: #ECFDF5;
+    --btn-youtube-text: #022C22;
+    --border-color: #166534;
+    --profile-ring: #4ADE80;
+    --profile-ring-light: #86EFAC;
+    --social-icon-color: #A7F3D0;
+    --social-icon-hover: #ffffff;
+}
+
+/* ==========================================================================
+   THURSDAY - The Cyberpunk Soft (Violet & Cyan)
+   ========================================================================== */
+[data-day="thursday"] {
+    --bg-primary: #F5F3FF;
+    --bg-secondary: #EDE9FE;
+    --bg-gradient-start: #EDE9FE;
+    --bg-gradient-mid: #DDD6FE;
+    --bg-gradient-end: #F5F3FF;
+    --text-primary: #4C1D95;
+    --text-secondary: #5B21B6;
+    --text-muted: #7C3AED;
+    --accent-primary: #0891B2;
+    --btn-primary-bg: #0891B2;
+    --btn-primary-text: #ffffff;
+    --btn-primary-hover: #0E7490;
+    --btn-youtube-bg: #4C1D95;
+    --btn-youtube-text: #ffffff;
+    --border-color: #DDD6FE;
+    --profile-ring: #0891B2;
+    --profile-ring-light: #22D3EE;
+    --social-icon-color: #5B21B6;
+    --social-icon-hover: #4C1D95;
+}
+
+[data-day="thursday"][data-theme="dark"] {
+    --bg-primary: #2E1065;
+    --bg-secondary: #3B0764;
+    --bg-gradient-start: #2E1065;
+    --bg-gradient-mid: #171725;
+    --bg-gradient-end: #0F0F1A;
+    --text-primary: #E0E7FF;
+    --text-secondary: #C4B5FD;
+    --text-muted: #A78BFA;
+    --btn-primary-bg: #22D3EE;
+    --btn-primary-text: #0F0F1A;
+    --btn-primary-hover: #67E8F9;
+    --btn-youtube-bg: #E0E7FF;
+    --btn-youtube-text: #171725;
+    --border-color: #3B0764;
+    --profile-ring: #22D3EE;
+    --profile-ring-light: #67E8F9;
+    --social-icon-color: #C4B5FD;
+    --social-icon-hover: #ffffff;
+}
+
+/* ==========================================================================
+   FRIDAY - The Corporate Trust (Blue & Grey)
+   ========================================================================== */
+[data-day="friday"] {
+    --bg-primary: #F0F9FF;
+    --bg-secondary: #E0F2FE;
+    --bg-gradient-start: #E0F2FE;
+    --bg-gradient-mid: #BAE6FD;
+    --bg-gradient-end: #F0F9FF;
+    --text-primary: #0C4A6E;
+    --text-secondary: #075985;
+    --text-muted: #0369A1;
+    --accent-primary: #0284C7;
+    --btn-primary-bg: #0284C7;
+    --btn-primary-text: #ffffff;
+    --btn-primary-hover: #0369A1;
+    --btn-youtube-bg: #0C4A6E;
+    --btn-youtube-text: #ffffff;
+    --border-color: #BAE6FD;
+    --profile-ring: #0284C7;
+    --profile-ring-light: #38BDF8;
+    --social-icon-color: #075985;
+    --social-icon-hover: #0C4A6E;
+}
+
+[data-day="friday"][data-theme="dark"] {
+    --bg-primary: #0C4A6E;
+    --bg-secondary: #075985;
+    --bg-gradient-start: #0C4A6E;
+    --bg-gradient-mid: #020617;
+    --bg-gradient-end: #000000;
+    --text-primary: #F0F9FF;
+    --text-secondary: #BAE6FD;
+    --text-muted: #7DD3FC;
+    --btn-primary-bg: #38BDF8;
+    --btn-primary-text: #020617;
+    --btn-primary-hover: #7DD3FC;
+    --btn-youtube-bg: #F0F9FF;
+    --btn-youtube-text: #020617;
+    --border-color: #075985;
+    --profile-ring: #38BDF8;
+    --profile-ring-light: #7DD3FC;
+    --social-icon-color: #BAE6FD;
+    --social-icon-hover: #ffffff;
+}
+
+/* ==========================================================================
+   SATURDAY - The Warm Contrast (Sand & Charcoal)
+   ========================================================================== */
+[data-day="saturday"] {
+    --bg-primary: #FFFCF5;
+    --bg-secondary: #FEF3E2;
+    --bg-gradient-start: #FEF3E2;
+    --bg-gradient-mid: #FED7AA;
+    --bg-gradient-end: #FFFCF5;
+    --text-primary: #292524;
+    --text-secondary: #44403C;
+    --text-muted: #78716C;
+    --accent-primary: #EA580C;
+    --btn-primary-bg: #EA580C;
+    --btn-primary-text: #ffffff;
+    --btn-primary-hover: #C2410C;
+    --btn-youtube-bg: #292524;
+    --btn-youtube-text: #ffffff;
+    --border-color: #FED7AA;
+    --profile-ring: #EA580C;
+    --profile-ring-light: #FB923C;
+    --social-icon-color: #44403C;
+    --social-icon-hover: #292524;
+}
+
+[data-day="saturday"][data-theme="dark"] {
+    --bg-primary: #292524;
+    --bg-secondary: #44403C;
+    --bg-gradient-start: #292524;
+    --bg-gradient-mid: #1C1917;
+    --bg-gradient-end: #0C0A09;
+    --text-primary: #F5F5F4;
+    --text-secondary: #D6D3D1;
+    --text-muted: #A8A29E;
+    --btn-primary-bg: #FB923C;
+    --btn-primary-text: #1C1917;
+    --btn-primary-hover: #FDBA74;
+    --btn-youtube-bg: #F5F5F4;
+    --btn-youtube-text: #1C1917;
+    --border-color: #44403C;
+    --profile-ring: #FB923C;
+    --profile-ring-light: #FDBA74;
+    --social-icon-color: #D6D3D1;
+    --social-icon-hover: #ffffff;
+}
+
+/* ==========================================================================
+   DARK THEME BASE (Fallback)
+   ========================================================================== */
+[data-theme="dark"] {
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
-    
-    /* Profile Ring - Dark Mode (Golden) */
-    --profile-ring: #e7a33e;
-    --profile-ring-light: #f0c078;
-    
-    /* Social Icons - Dark Mode */
-    --social-icon-color: #d1d5db;
-    --social-icon-hover: #ffffff;
 }
 
 /* ==========================================================================

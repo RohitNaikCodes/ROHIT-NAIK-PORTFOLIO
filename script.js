@@ -1,7 +1,7 @@
 /**
  * ==========================================================================
  * ROHIT NAIK PORTFOLIO - JAVASCRIPT
- * Theme Toggle, Dynamic Greeting, and Interactivity
+ * Theme Toggle, Dynamic Greeting, Daily Color Themes, and Interactivity
  * ==========================================================================
  */
 
@@ -15,6 +15,20 @@
     const STORAGE_KEY = 'portfolio-theme';
     const THEME_DARK = 'dark';
     const THEME_LIGHT = 'light';
+    
+    // Day names for daily color themes
+    const DAYS = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+    
+    // Theme names for each day (for display/debugging)
+    const THEME_NAMES = {
+        sunday: 'LinkedIn Premium (Purple & Gold)',
+        monday: 'Tech Minimalist (Slate & Indigo)',
+        tuesday: 'Premium Mono (Black & Gold)',
+        wednesday: 'Modern Nature (Emerald & Sage)',
+        thursday: 'Cyberpunk Soft (Violet & Cyan)',
+        friday: 'Corporate Trust (Blue & Grey)',
+        saturday: 'Warm Contrast (Sand & Charcoal)'
+    };
 
     // ==========================================================================
     // DOM ELEMENTS
@@ -24,7 +38,29 @@
     const greetingElement = document.getElementById('greeting');
 
     // ==========================================================================
-    // THEME MANAGEMENT
+    // DAY-BASED THEME MANAGEMENT
+    // ==========================================================================
+
+    /**
+     * Get current day of the week
+     * @returns {string} - Day name (lowercase)
+     */
+    function getCurrentDay() {
+        const dayIndex = new Date().getDay();
+        return DAYS[dayIndex];
+    }
+
+    /**
+     * Apply day-based color theme
+     */
+    function applyDayTheme() {
+        const currentDay = getCurrentDay();
+        document.documentElement.setAttribute('data-day', currentDay);
+        console.log(`🎨 Today's theme: ${THEME_NAMES[currentDay]}`);
+    }
+
+    // ==========================================================================
+    // LIGHT/DARK THEME MANAGEMENT
     // ==========================================================================
 
     /**
@@ -106,6 +142,10 @@
      * Initialize theme on page load
      */
     function initializeTheme() {
+        // First apply day-based color theme
+        applyDayTheme();
+        
+        // Then apply light/dark theme preference
         const preferredTheme = getPreferredTheme();
         applyTheme(preferredTheme);
     }
@@ -408,10 +448,135 @@
     // EXPOSE API (Optional - for external access)
     // ==========================================================================
 
+    // Preview mode - current day index for cycling
+    let previewDayIndex = new Date().getDay();
+    let isPreviewMode = false;
+
+    /**
+     * Preview a specific day's theme
+     * @param {number} dayIndex - 0 (Sunday) to 6 (Saturday)
+     */
+    function previewDay(dayIndex) {
+        if (dayIndex >= 0 && dayIndex < 7) {
+            document.documentElement.setAttribute('data-day', DAYS[dayIndex]);
+            console.log(`👁️ Previewing: ${DAYS[dayIndex].charAt(0).toUpperCase() + DAYS[dayIndex].slice(1)} - ${THEME_NAMES[DAYS[dayIndex]]}`);
+        }
+    }
+
+    /**
+     * Cycle to next day theme (for preview)
+     */
+    function nextDayTheme() {
+        isPreviewMode = true;
+        previewDayIndex = (previewDayIndex + 1) % 7;
+        previewDay(previewDayIndex);
+        showThemeNotification(DAYS[previewDayIndex]);
+    }
+
+    /**
+     * Cycle to previous day theme (for preview)
+     */
+    function prevDayTheme() {
+        isPreviewMode = true;
+        previewDayIndex = (previewDayIndex - 1 + 7) % 7;
+        previewDay(previewDayIndex);
+        showThemeNotification(DAYS[previewDayIndex]);
+    }
+
+    /**
+     * Reset to current day's theme
+     */
+    function resetToToday() {
+        isPreviewMode = false;
+        previewDayIndex = new Date().getDay();
+        applyDayTheme();
+        showThemeNotification(DAYS[previewDayIndex], true);
+    }
+
+    /**
+     * Show theme notification
+     */
+    function showThemeNotification(day, isReset = false) {
+        // Remove existing notification
+        const existing = document.querySelector('.theme-notification');
+        if (existing) existing.remove();
+
+        // Create notification
+        const notification = document.createElement('div');
+        notification.className = 'theme-notification';
+        notification.innerHTML = `
+            <div style="
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: var(--btn-primary-bg);
+                color: var(--btn-primary-text);
+                padding: 12px 24px;
+                border-radius: 50px;
+                font-weight: 600;
+                font-size: 14px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+                z-index: 9999;
+                animation: slideUp 0.3s ease;
+            ">
+                ${isReset ? '🔄 Reset: ' : '🎨 '}${day.charAt(0).toUpperCase() + day.slice(1)} - ${THEME_NAMES[day]}
+            </div>
+        `;
+        document.body.appendChild(notification);
+
+        // Remove after 2 seconds
+        setTimeout(() => notification.remove(), 2000);
+    }
+
+    // Add keyboard shortcuts for preview
+    document.addEventListener('keydown', (e) => {
+        // Alt + Arrow Right = Next day theme
+        if (e.altKey && e.key === 'ArrowRight') {
+            e.preventDefault();
+            nextDayTheme();
+        }
+        // Alt + Arrow Left = Previous day theme
+        if (e.altKey && e.key === 'ArrowLeft') {
+            e.preventDefault();
+            prevDayTheme();
+        }
+        // Alt + R = Reset to today
+        if (e.altKey && e.key === 'r') {
+            e.preventDefault();
+            resetToToday();
+        }
+    });
+
+    // Add CSS animation for notification
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+    `;
+    document.head.appendChild(style);
+
     window.Portfolio = {
         toggleTheme,
         getCurrentTheme,
-        getGreetingMessage
+        getGreetingMessage,
+        // Preview functions
+        previewDay,
+        nextDayTheme,
+        prevDayTheme,
+        resetToToday,
+        // Get all themes info
+        getThemes: () => THEME_NAMES,
+        getDays: () => DAYS
     };
+
+    // Log available keyboard shortcuts
+    console.log('⌨️ Theme Preview Shortcuts:');
+    console.log('   Alt + → : Next day theme');
+    console.log('   Alt + ← : Previous day theme');
+    console.log('   Alt + R : Reset to today');
+    console.log('   Alt + T : Toggle dark/light mode');
 
 })();
