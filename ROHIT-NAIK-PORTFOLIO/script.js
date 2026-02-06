@@ -246,24 +246,6 @@
     }
 
     /**
-     * Add hover sound effect (optional - commented out by default)
-     * Uncomment to enable subtle hover sounds
-     */
-    // function initializeHoverSounds() {
-    //     const interactiveElements = document.querySelectorAll('.btn, .social-icon, .theme-toggle');
-    //     
-    //     const hoverSound = new Audio('data:audio/wav;base64,...'); // Add sound data
-    //     hoverSound.volume = 0.1;
-    //     
-    //     interactiveElements.forEach(element => {
-    //         element.addEventListener('mouseenter', () => {
-    //             hoverSound.currentTime = 0;
-    //             hoverSound.play().catch(() => {});
-    //         });
-    //     });
-    // }
-
-    /**
      * Smooth scroll behavior for anchor links
      */
     function initializeSmoothScroll() {
@@ -277,35 +259,6 @@
                         block: 'start'
                     });
                 }
-            });
-        });
-    }
-
-    // ==========================================================================
-    // ANALYTICS TRACKING (Optional)
-    // ==========================================================================
-
-    /**
-     * Track link clicks (customize for your analytics platform)
-     */
-    function initializeLinkTracking() {
-        const socialLinks = document.querySelectorAll('.social-icon, .btn, .email-link');
-        
-        socialLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                const label = this.getAttribute('aria-label') || this.textContent.trim();
-                
-                // Google Analytics 4 (if gtag is available)
-                if (typeof gtag === 'function') {
-                    gtag('event', 'click', {
-                        'event_category': 'outbound',
-                        'event_label': label,
-                        'transport_type': 'beacon'
-                    });
-                }
-                
-                // Console log for debugging
-                console.log('Link clicked:', label);
             });
         });
     }
@@ -343,34 +296,6 @@
                 }
             });
         });
-    }
-
-    // ==========================================================================
-    // PERFORMANCE OPTIMIZATION
-    // ==========================================================================
-
-    /**
-     * Lazy load images (for future use with additional images)
-     */
-    function initializeLazyLoading() {
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        if (img.dataset.src) {
-                            img.src = img.dataset.src;
-                            img.removeAttribute('data-src');
-                            imageObserver.unobserve(img);
-                        }
-                    }
-                });
-            });
-
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
     }
 
     // ==========================================================================
@@ -420,11 +345,7 @@
         
         // Error handling
         initializeImageFallback();
-        
-        // Optional features (uncomment to enable)
-        // initializeLinkTracking();
-        // initializeLazyLoading();
-        
+
         console.log('🚀 Portfolio initialized successfully!');
     }
 
