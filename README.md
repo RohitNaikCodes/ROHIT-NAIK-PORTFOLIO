@@ -29,7 +29,7 @@ A clean, modern, and responsive linktree-style portfolio website with dark/light
 
 - `Alt + T` - Toggle theme
 
-## 📄 License
+## 📄 License...
 
 MIT License - Feel free to use for personal or commercial projects.
 
