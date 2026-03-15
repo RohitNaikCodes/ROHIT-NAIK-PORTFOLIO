@@ -17,7 +17,7 @@ A clean, modern, and responsive linktree-style portfolio website with dark/light
 - **JavaScript** - ES6+, No frameworks
 - **Google Fonts** - Inter font family
 
-## 📱 Browser Support
+## 📱 Browser Support...
 
 - Chrome (latest)
 - Firefox (latest)
