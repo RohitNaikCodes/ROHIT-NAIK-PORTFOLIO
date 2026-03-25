@@ -1,7 +1,7 @@
-# Rohit Naik - Portfolio.....
+# Rohit Naik - Portfolio
 A clean, modern, and responsive linktree-style portfolio website with dark/light theme support.
 
-## ✨ Features......
+## ✨ Features
 
 - **Dark/Light Theme** - Toggle with localStorage persistence
 - **Responsive Design** - Works on desktop, tablet, and mobile
@@ -10,14 +10,14 @@ A clean, modern, and responsive linktree-style portfolio website with dark/light
 - **No Dependencies** - Pure HTML, CSS, JavaScript
 
 
-## 🔧 Technologies Used....
+## 🔧 Technologies Used
 
 - **HTML5** - Semantic markup
 - **CSS3** - Custom properties, Flexbox, Grid, Animations
 - **JavaScript** - ES6+, No frameworks
 - **Google Fonts** - Inter font family
 
-## 📱 Browser Support...
+## 📱 Browser Support
 
 - Chrome (latest)
 - Firefox (latest)
