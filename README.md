@@ -8,7 +8,7 @@ A clean, modern, and responsive linktree-style portfolio website with dark/light
 - **Dynamic Greeting** - Changes based on time of day
 - **Smooth Animations** - Hover effects and transitions
 - **No Dependencies** - Pure HTML, CSS, JavaScript
-
+..
 
 ## 🔧 Technologies Used
 
