@@ -25,7 +25,7 @@ A clean, modern, and responsive linktree-style portfolio website with dark/light
 - Edge (latest)
 - Mobile browsers (iOS Safari, Chrome Android)
 
-## ⌨️ Keyboard Shortcuts
+## ⌨️ Keyboard Shortcuts..
 
 - `Alt + T` - Toggle theme
 
