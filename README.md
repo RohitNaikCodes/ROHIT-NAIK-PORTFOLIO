@@ -12,7 +12,7 @@ A clean, modern, and responsive linktree-style portfolio website with dark/light
 ## 🔧 Technologies Used
 - **HTML5** - Semantic markup
 - **CSS3** - Custom properties, Flexbox, Grid, Animations
-- **JavaScript** - ES6+, No frameworks
+- **JavaScript** - ES6+, No frameworks.
 - **Google Fonts** - Inter font family
 
 ## 📱 Browser Support
