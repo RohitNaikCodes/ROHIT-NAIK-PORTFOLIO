@@ -3,7 +3,7 @@ A clean, modern, and responsive linktree-style portfolio website with dark/light
 
 ## ✨ Features
 - **Dark/Light Theme** - Toggle with localStorage persistence
-- **Responsive Design** - Works on desktop, tablet, and mobile
+- **Responsive Design** - Works on desktop, tablet, and mobile..
 - **Dynamic Greeting** - Changes based on time of day
 - **Smooth Animations** - Hover effects and transitions
 - **No Dependencies** - Pure HTML, CSS, JavaScript
