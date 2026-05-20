@@ -8,7 +8,7 @@ A clean, modern, and responsive linktree-style portfolio website with dark/light
 - **Smooth Animations** - Hover effects and transitions
 - **No Dependencies** - Pure HTML, CSS, JavaScript
 
-
+..
 ## 🔧 Technologies Used
 - **HTML5** - Semantic markup
 - **CSS3** - Custom properties, Flexbox, Grid, Animations
