@@ -1,4 +1,4 @@
-5 # Rohit Naik - Portfolio
+# Rohit Naik - Portfolio
 A clean, modern, and responsive linktree-style portfolio website with dark/light theme support.
 
 ## ✨ Features
